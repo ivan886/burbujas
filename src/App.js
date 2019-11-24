@@ -6,8 +6,8 @@ import {
   HashRouter
 } from "react-router-dom";
 import Home from "./Application/Home";
-import WordList from "./Word/WordList";
-import WordCreate from "./Word/WordCreate";
+import ViajeList from "./Viajes/ViajeList";
+import ViajeCreate from "./Viajes/ViajeCreate";
 
 
 function App() {
@@ -16,13 +16,13 @@ function App() {
      <HashRouter>
           <ul className="header">
             <li><NavLink to="/">Home</NavLink></li>
-             <li><NavLink to="/create">Crear Palabra</NavLink></li>
-            <li><NavLink to="/Palabras">Palabras</NavLink></li>
+             <li><NavLink to="/create">Consultar</NavLink></li>
+            <li><NavLink to="/viajes">Viajes</NavLink></li>
           </ul>
           <div className="content">
             <Route exact path="/" component={Home}/>
-            <Route path="/create" component={WordCreate}/>
-            <Route path="/Palabras" component={WordList}/>
+            <Route path="/create" component={ViajeCreate}/>
+            <Route path="/viajes" component={ViajeList}/>
           </div>
       </HashRouter>
     </div>
