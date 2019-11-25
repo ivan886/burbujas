@@ -1,5 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
+import Mapa from './Mapa';
+
 
 class ViajeList extends React.Component{
     
@@ -11,14 +13,15 @@ class ViajeList extends React.Component{
     Axios.get(`http://18.191.148.84:8000/api/viajes`)
       .then(res => {
         const viajes = res.data.data;
-        //console.log(persons.data);
         this.setState({ viajes });
       })
   }
 
   render() {
     return (
-         <table>
+    <div>    
+        <div>
+       <table>
           <thead>
             <tr>
               <th>Imei</th>
@@ -42,6 +45,12 @@ class ViajeList extends React.Component{
             }
               </tbody>
         </table>
+        </div>
+        <div><h1>Mapa</h1>
+           <Mapa viajes={this.state.viajes} contenido="Mapa React" />
+        </div>
+    </div>    
+        
     )
   }
 }
